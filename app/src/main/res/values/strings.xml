@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Study</string>
+    <string name="first">First</string>
+    <string name="second">Second</string>
+    <string name="third">Third</string>
+    <string name="just_working_on_this">Just Working on this!</string>
+    <string name="channel_name">channel_name</string>
+    <string name="channel_description">channel_description</string>
+</resources>

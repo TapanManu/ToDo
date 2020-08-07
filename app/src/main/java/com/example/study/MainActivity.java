@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     TextView tv;
+    Button b;
     public static ArrayList<String> tasks = new ArrayList<String>();
 
     @Override
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //tasks.add("hello");
         tv = findViewById(R.id.tv);
-        Button b = findViewById(R.id.button);
+        b = findViewById(R.id.button);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,10);
             }
         });
+
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
         Log.d("tasks size", String.valueOf(tasks.size()));
         dispTask();
     }
@@ -49,18 +56,21 @@ public class MainActivity extends AppCompatActivity {
             assert data != null;
             String result = data.getStringExtra("result");
             assert result != null;
-            Log.d("result",result);
+            //Log.d("result",result);
             tasks.add(result);
+            //Log.d("value",tasks.get(0));
         }
     }
 
 
     public void dispTask(){
         Log.d("tasks size", String.valueOf(tasks.size()));
+        //Log.d("value",tasks.get(0));
         if(tasks.size()==0){
             tv.setText("Your Tasks appear here");
         }
         else{
+            Log.d("value",tasks.get(0));
             for(String t:tasks){
                 tv.setText(t+"\n");
             }
@@ -77,17 +87,14 @@ public class MainActivity extends AppCompatActivity {
         ConstraintLayout layout = findViewById(R.id.cons);
         switch(item.getItemId()){
             case R.id.first:
-
                 layout.setBackgroundColor(Color.GREEN);
                 new Notifications(this,"BACKGROUND CHANGED","New Color is GREEN",0);
                 break;
             case R.id.second:
-
                 layout.setBackgroundColor(Color.BLUE);
                 new Notifications(this,"BACKGROUND CHANGED","New Color is BLUE",1);
                 break;
             case R.id.third:
-
                 layout.setBackgroundColor(Color.RED);
                 new Notifications(this,"BACKGROUND CHANGED","New Color is RED",2);
                 break;

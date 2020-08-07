@@ -11,14 +11,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class ToDo extends AppCompatActivity {
-
+    EditText et;
+    TextView task;
+    Button add;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do);
-        final EditText et = findViewById(R.id.et);
-        TextView task = findViewById(R.id.tvtask);
-        Button add = findViewById(R.id.add);
+        et = findViewById(R.id.et);
+        task = findViewById(R.id.tvtask);
+        add = findViewById(R.id.add);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

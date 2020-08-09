@@ -82,10 +82,10 @@ public class MainActivity extends AppCompatActivity {
         else{
             Log.d("value",tasks.get(0));
             tv.setText("");
-            prev=tv;
+            //prev=tv;
             for(String t:tasks){
-                //tv.append(t+"\n");   //appends the content within same text view
-                prev = addView(10,t);
+                tv.append(t+"\n");   //appends the content within same text view
+                //prev = addView(10,t);
             }
         }
     }
@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+    /*
     private TextView addView(int position,String t){
 
         ConstraintSet set = new ConstraintSet();
@@ -150,5 +151,5 @@ public class MainActivity extends AppCompatActivity {
        //         prev.getId(), ConstraintSet.TOP,60);
         set.applyTo(layout);
         return textView;
-    }
+    }*/
 }

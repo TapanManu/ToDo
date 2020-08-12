@@ -49,9 +49,23 @@ public class MainActivity extends AppCompatActivity implements TodoAdapter.ItemC
                 else {
                     ToDoApplicationClass.tasks.add(new ToDo(etTask.getText().toString().trim()));
                     new Notifications(MainActivity.this,"Success","tasks added successfully",1);
+                    tvTask.setText(etTask.getText().toString().trim());
+                    etTask.setText(null);
+                    listFrag.notifyDataChanged();
+                }
+            }
+        });
+        del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int i = ToDoApplicationClass.search(tvTask.getText().toString().trim());
+                if(i!=-1) {
+                    ToDoApplicationClass.tasks.remove(ToDoApplicationClass.tasks.get(i));
                     tvTask.setText(null);
                     listFrag.notifyDataChanged();
                 }
+                else
+                    Toast.makeText(getApplicationContext(),"select an item to delete",Toast.LENGTH_SHORT).show();
             }
         });
         onItemClicked(0);

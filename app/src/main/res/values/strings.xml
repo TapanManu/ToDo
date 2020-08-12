@@ -13,4 +13,5 @@
     <string name="add">Add</string>
     <string name="task_appears_here">Task appears here</string>
     <string name="todo">TODO</string>
+    <string name="delete">delete</string>
 </resources>

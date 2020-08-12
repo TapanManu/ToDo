@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,9 +35,11 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView taskview;
+        ImageButton del;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             taskview = (TextView) itemView.findViewById(R.id.tvTask1);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -58,6 +61,8 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder>{
 
         viewHolder.itemView.setTag(tasks.get(i));
         viewHolder.taskview.setText(tasks.get(i).getTask());
+
+
 
         //viewHolder.tvTask.setText("hello");
     }

@@ -25,7 +25,7 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder>{
     }
 
     public TodoAdapter(Context context,ArrayList<ToDo> list){
-       // Log.d("taskslist",String.valueOf(list.size()));
+       Log.d("tasklist",String.valueOf(list.size()));
         this.tasks=list;
         this.activity = (ItemClicked) context;
         //this.context = context;

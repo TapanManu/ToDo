@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements TodoAdapter.ItemC
     TextView tvTask,tvTask1;
     EditText etTask;
     Button addTask;
+    ImageButton del;
     ListFrag listFrag;
     FragmentManager fragmentManager;
 
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements TodoAdapter.ItemC
         tvTask1 = findViewById((R.id.tvTask1));
         etTask = findViewById(R.id.etTask);
         addTask = findViewById(R.id.btnaddtask);
+        del = findViewById(R.id.del);
         fragmentManager = this.getSupportFragmentManager();
         listFrag = (ListFrag) fragmentManager.findFragmentById(R.id.listfrag);
         addTask.setOnClickListener(new View.OnClickListener() {
